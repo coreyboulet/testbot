@@ -13,8 +13,7 @@ def webhook():
   data = request.get_json()
 
   # We don't want to reply to ourselves!
-  if data['group_id']==	"39961905":
-  if data['name'] != 'Secretary of Coreyboulet':
+  if data['group_id']==	"39961905" and if data['name'] != 'Secretary of Coreyboulet':
 
     msg = '{}, announced :"{}".... Who is in ?'.format(data['name'], data['text'])
     send_message(msg)
