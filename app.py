@@ -22,11 +22,11 @@ def webhook():
 
   # Ici je verifie que on est bien dans le code du channel de conversation
   #then I check the text and that I'm not talking to myself
-  #elif data['group_id']=='39961905' and data['text']=="hello" and data['name'] != 'Secretary of Coreyboulet':
-  	#msg = "Hello {}!".format(data['name'])
-   # send_message(msg)
+  elif data['group_id']=='39961905' and data['text']=="hello" and data['name'] != 'Secretary of Coreyboulet':
+  	msg = "Hello {}!".format(data['name'])
+    send_message(msg)
 
-  #return "ok", 200
+  return "ok", 200
 
 
 def send_message(msg):
