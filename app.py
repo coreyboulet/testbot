@@ -24,6 +24,8 @@ def webhook():
   	msg = 'Hello {}!'.format(data['name'])
   elif data['group_id']=='33797805' and data['text']=='Good night' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'Sleep tight {}!'.format(data['name'])
+  elif data['group_id']=='33797805' and data['text']=='lol' and data['name'] != 'Secretary of Coreyboulet':
+  	msg = 'lol'
 
   
   send_message(msg)
