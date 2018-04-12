@@ -15,7 +15,7 @@ def webhook():
   # We don't want to reply to ourselves!
   # In this line I check that this message come from the alert channel so it starts the message telling 
   #us about the raid happening. 
-  if data['group_id']==	'39995566' and data['name'] != 'Secretary of Coreyboulet':
+  if data['group_id']==	'39995566' and data['text']=='hello' and data['name'] != 'Secretary of Coreyboulet':
 
     msg = '{}, announced :"{}".... Who is in ?'.format(data['name'], data['text'])
     send_message(msg)
