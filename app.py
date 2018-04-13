@@ -46,7 +46,7 @@ def send_message(msg):
   data = {
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
-          'attachments': mtn,
+          #'attachments': mtn,
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()
