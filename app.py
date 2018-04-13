@@ -47,7 +47,7 @@ def send_message(msg):
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
           'type':"mentions",
-          'user_ids':[39961905],
+          'user_ids':[35632718],
           "loci":[[0,17]]
           #'attachments': mtn,
          }
