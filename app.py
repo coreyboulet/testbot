@@ -30,6 +30,8 @@ def webhook():
   	msg = 'Sleep tight {}!'.format(data['name'])
   elif data['group_id']=='39961905' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
+      elif data['group_id']=='39961905' and mess=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
+    msg = '@Abhinay Tirupati'
 
   send_message(msg)
   return "ok", 200
