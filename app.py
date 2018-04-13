@@ -3,9 +3,10 @@ import json
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-from groupy import attachments
-from groupy import post
-
+#from groupy import attachments
+#from groupy import post
+#from groupy.client import Client
+#client = Client.from_token(token)MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -34,7 +35,7 @@ def webhook():
   	msg = 'lol'
   elif data['group_id']=='39961905' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = '@Abhinay Tirupati'
-    message = 39961905.post(text='hi')
+   #message = 39961905.post(text='hi')
     #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
 
   send_message(msg)
