@@ -46,6 +46,8 @@ def send_message(msg):
   data = {
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
+          'type':"mentions",
+          'user_ids':[39961905],
           #'attachments': mtn,
          }
   request = Request(url, urlencode(data).encode())
