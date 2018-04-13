@@ -30,7 +30,12 @@ def webhook():
   elif data['group_id']=='33797805' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
   elif data['group_id']=='33797805' and mess=='@rare' and data['name'] != 'Secretary of Coreyboulet':
-  	msg = '@Abhinay | Lv39 | Instinct @Mitch (Rayquaza50) | Level 38 | Mystic'
+  	mention = {}
+	mention["type"] = "mentions"
+	mention["user_ids"] = user_ids
+	mention["loci"] = loci
+	msg = '@Abhinay | Lv39 | Instinct @Mitch (Rayquaza50) | Level 38 | Mystic' + mention
+
 
   
   send_message(msg)
