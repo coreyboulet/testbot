@@ -47,7 +47,7 @@ def send_message(msg):
   url  = 'https://api.groupme.com/v3/bots/post'
 
   data = {
-          'attachments': [{:'loci'=[[0, 17]], 'type':'mentions', 'user_ids':["35632718"]}],
+          'attachments': [{'loci':[[0, 17]], 'type':'mentions', 'user_ids':["35632718"]}],
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
           #'type':"mentions",
