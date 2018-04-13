@@ -12,7 +12,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
-def webhook():
+"""def webhook():
   data = request.get_json()
 
   #Here I'm putting the message coming from the channel in lower so I dont care about caps
@@ -39,7 +39,7 @@ def webhook():
     #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
 
   send_message(msg)
-  return "ok", 200
+  return "ok", 200"""
 
 
 
@@ -49,7 +49,7 @@ def send_message(msg):
   data = {
           'attachments': [{'loci':[[0, 17]], 'type':'mentions', 'user_ids':["35632718"]}],
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
-          'text'   : msg,
+          'text'   : """msg,""" '@Abhinay Tirupati',
           #'type':"mentions",
           #'user_ids':[35632718],
           #"loci":[[0,17]]
