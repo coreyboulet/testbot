@@ -11,6 +11,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def webhook():
   data = request.get_json()
+  #Here I'm putting the message coming from the channel in lower so I dont care about caps
   mess = data['text']
   mess= mess.lower()
 
@@ -28,6 +29,8 @@ def webhook():
   	msg = 'Sleep tight {}!'.format(data['name'])
   elif data['group_id']=='33797805' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
+  elif data['group_id']=='33797805' and mess=='@rare' and data['name'] != 'Secretary of Coreyboulet':
+  	msg = '@Abhinay | Lv39 | Instinct @Mitch (Rayquaza50) | Level 38 | Mystic'
 
   
   send_message(msg)
