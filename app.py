@@ -33,7 +33,7 @@ def webhook():
   	msg = 'lol'
   elif data['group_id']=='39961905' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = '@Abhinay Tirupati'
-    #mention = attachments.Mentions(loci=[(0, 16)], user_ids=['35632718'])
+    mtn = [{:loci=[[0, 16]], :type="mentions", :user_ids=["35632718"]}]
 
   send_message(msg)
   return "ok", 200
@@ -46,7 +46,7 @@ def send_message(msg):
   data = {
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
-          "attachments": [{:loci=[[0, 16]], :type="mentions", :user_ids=["35632718"]}]
+          "attachments": mtn,
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()
