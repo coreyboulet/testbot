@@ -38,8 +38,7 @@ def webhook():
    #message = 39961905.post(text='hi')
     #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
 
-  send_message(msg)
-  return "ok", 200
+
 
 
 
@@ -57,3 +56,7 @@ def send_message(msg):
          }
   request = Request(url, urlencode(data).encode())
   json = urlopen(request).read().decode()
+
+
+send_message(msg)
+return "ok", 200
