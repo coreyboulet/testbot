@@ -48,6 +48,7 @@ def send_message(msg):
           'text'   : msg,
           'type':"mentions",
           'user_ids':[39961905],
+          "loci":[[0,16]]
           #'attachments': mtn,
          }
   request = Request(url, urlencode(data).encode())
