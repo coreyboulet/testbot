@@ -24,14 +24,13 @@ def webhook():
 
   # Ici je verifie que on est bien dans le code du channel de conversation
   #then I check the text and that I'm not talking to myself
-  elif data['group_id']=='33797805' and data['text']=='Hello' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']=='33797805' and mess=='Hello' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'Hello {}!'.format(data['name'])
-  elif data['group_id']=='33797805' and data['text']=='Good night' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']=='33797805' and mess=='Good night' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'Sleep tight {}!'.format(data['name'])
-  elif data['group_id']=='33797805' and data['text']=='lol' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']=='33797805' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
 
-  
   send_message(msg)
   return "ok", 200
 
