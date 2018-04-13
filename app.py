@@ -33,7 +33,7 @@ def webhook():
   	msg = 'lol'
   elif data['group_id']=='39961905' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = '@Abhinay Tirupati'
-    #mtn = [{:loci=[[0, 16]], :type="mentions", :user_ids=["35632718"]}]
+    #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
 
   send_message(msg)
   return "ok", 200
@@ -48,7 +48,7 @@ def send_message(msg):
           'text'   : msg,
           'type':"mentions",
           'user_ids':[39961905],
-          "loci":[[0,16]]
+          "loci":[[0,17]]
           #'attachments': mtn,
          }
   request = Request(url, urlencode(data).encode())
