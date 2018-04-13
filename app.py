@@ -31,9 +31,6 @@ def webhook():
   	msg = 'lol'
   elif data['group_id']=='33797805' and mess=='@rare' and data['name'] != 'Secretary of Coreyboulet':
 	msg = '@Abhinay | Lv39 | Instinct @Mitch (Rayquaza50) | Level 38 | Mystic'
-
-
-  
   send_message(msg)
   return "ok", 200
 
