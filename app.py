@@ -33,12 +33,14 @@ def webhook():
   	msg = 'Sleep tight {}!'.format(data['name'])
   elif data['group_id']=='39961905' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
+    send_message(msg)
   elif data['group_id']=='39961905' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = '@Abhinay Tirupati'
    #message = 39961905.post(text='hi')
     #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
+    send_message(msg)
 
-  send_message(msg)
+  #send_message(msg)
   return "ok", 200
 
 
