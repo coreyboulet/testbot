@@ -6,7 +6,7 @@ from urllib.request import Request, urlopen
 #from groupy import attachments
 #from groupy import post
 #from groupy.client import Client
-#client = Client.from_token(token)MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG
+#client = Client.from_token(token)
 from flask import Flask, request
 
 app = Flask(__name__)
