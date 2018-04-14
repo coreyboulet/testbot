@@ -33,8 +33,8 @@ def webhook():
   	msg = 'Sleep tight {}!'.format(data['name'])
   elif data['group_id']=='39961905' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
-  elif data['group_id']=='39961905' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Hello, @Abhinay Tirupati'
+  elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
+    msg = 'Hello, @Clare'
     #atch = 
    #message = 39961905.post(text='hi')
     #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
@@ -51,7 +51,7 @@ def send_message(msg):
           
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
-          'attachments': [{'loci':[[7, 16]], 'type':'mentions', 'user_ids':["35632718"]}]
+          'attachments': [{'loci':[[7, 16]], 'type':'mentions', 'user_ids':["27457002"]}]
           #'type':"mentions",
           #'user_ids':[35632718],
           #"loci":[[0,17]]
