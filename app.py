@@ -33,7 +33,7 @@ def webhook():
   	msg = 'Sleep tight {}!'.format(data['name'])
   elif data['group_id']=='33797805' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
-  elif data['group_id']=='33797805' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']=='39961905' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = '@Abhinay Tirupati'
     #atch = 
    #message = 39961905.post(text='hi')
@@ -45,7 +45,7 @@ def webhook():
 
 
 def send_message(msg):
-  url  = 'https://api.groupme.com/v3/groups?token=MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG'
+  url  = 'https://api.groupme.com/v3/bots/post?token=MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG'
 
   data = {
           
