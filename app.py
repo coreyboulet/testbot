@@ -34,7 +34,7 @@ def webhook():
   elif data['group_id']=='33797805' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
   	msg = 'lol'
   elif data['group_id']=='39961905' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
-    msg = '@Abhinay Tirupati'
+    msg = 'Hello, @Abhinay Tirupati'
     #atch = 
    #message = 39961905.post(text='hi')
     #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
@@ -51,7 +51,7 @@ def send_message(msg):
           
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
-          'attachments': [{'loci':[[0, 17]], 'type':'mentions', 'user_ids':["35632718"]}],
+          'attachments': [{'loci':[[7, 17]], 'type':'mentions', 'user_ids':["35632718"]}],
           #'type':"mentions",
           #'user_ids':[35632718],
           #"loci":[[0,17]]
