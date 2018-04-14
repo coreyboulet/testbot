@@ -45,8 +45,7 @@ def webhook():
 
 
 def send_message(msg):
-  url  = "https://api.groupme.com/v3/groups?token=MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG"
-  #'https://api.groupme.com/v3/bots/post?token=MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG'
+  url  = 'https://api.groupme.com/v3/bots/post?token=MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG'
 
   data = {
           
