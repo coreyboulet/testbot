@@ -43,7 +43,7 @@ def webhook():
 
 
 
-def send_message(msg):
+def send_message(data):
   url  = 'https://api.groupme.com/v3/bots/post'
 
   data = {
