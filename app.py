@@ -1,61 +1,69 @@
 import os
+import sys
 import json
+import groupy
+from groupy import Bot, Group, attachments
+
+groupy.config.KEY_LOCATION = "MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG"
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-#from groupy import attachments
-#from groupy import post
-#from groupy.client import Client
-#client = Client.from_token(token)
+
 from flask import Flask, request
 
 app = Flask(__name__)
 
 @app.route('/', methods=['POST'])
-def webhook():
-  data = request.get_json()
+def post():
+	data = request.get_json()
+	log('Recieved {}'.format(data))
+	gID = data['39961905']
+	bot = get_bot(gID)
+		# We don't want to reply to ourselves!
+	if data['name'] != bot.name:
+		msg = data['text'] #truc bizzare
+		if '@all' in msg:
+			at_all(bot, group)
+	if 'TypeThis' in msg:
+		bot.post("PostThis")
 
-  #Here I'm putting the message coming from the channel in lower so I dont care about caps
-  mess = data['text']
-  mess= mess.lower()
-  
-  # We don't want to reply to ourselves!
-  # In this line I check that this message come from the alert channel so it starts the message telling 
-  #us about the raid happening. 
-  if data['group_id']==	'36731470' and data['name'] != 'Secretary of Coreyboulet':
-    msg = '{}, announced :"{}".... Who is in ?'.format(data['name'], data['text'])
+	return "ok", 200
 
-  # Ici je verifie que on est bien dans le code du channel de conversation
-  #then I check the text and that I'm not talking to myself
-  elif data['group_id']=='33797805' and mess=='hello' and data['name'] != 'Secretary of Coreyboulet':
-  	msg = 'Hello {}!'.format(data['name'])
-  elif data['group_id']=='33797805' and mess=='good night' and data['name'] != 'Secretary of Coreyboulet':
-  	msg = 'Sleep tight {}!'.format(data['name'])
-  elif data['group_id']=='39961905' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
-  	msg = 'lol'
-  elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Hello, @Clare'
-    #atch = 
-   #message = 39961905.post(text='hi')
-    #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
+def at_all(bot, group):
+	members = group.members();
 
-  send_message(msg)
-  return "ok", 200
+	user_ids = []
+	loci = []
+	text = ""
+	pnt = 0
+
+	for m in members:
+		curm = m.identification()
+		id = curm["user_id"]
+		name = "@" + curm["nickname"] + " "
+
+		user_ids.append(id)
+
+		n = [pnt, len(name)]
+		loci.append(n) 
+		pnt += len(name)
+
+		text += name
+
+	mention = {}
+	mention["type"] = "mentions"
+	mention["user_ids"] = user_ids
+	mention["loci"] = loci
+
+	bot.post(text, mention)
+
+def get_bot(groupID):
+	for b in Bot.list():
+		if b.group_id == groupID:
+			return b
 
 
 
-def send_message(msg):
-  url  = 'https://api.groupme.com/v3/bots/post?token=MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG'
-
-  data = {
-          
-          'bot_id' : os.getenv('GROUPME_BOT_ID'),
-          'text'   : msg,
-          'attachments': [{'loci':[[7, 6]], 'type':'mentions', 'user_ids':["27457002"]}]
-          #'type':"mentions",
-          #'user_ids':[35632718],
-          #"loci":[[0,17]]
-          
-         }
-  request = Request(url, urlencode(data).encode())
-  json = urlopen(request).read().decode()
+def log(msg):
+	print(str(msg))
+		sys.stdout.flush()
