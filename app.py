@@ -35,9 +35,6 @@ def webhook():
   	msg = 'lol'
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello, @Clare'
-    #atch = 
-   #message = 39961905.post(text='hi')
-    #mtn = [{:loci=[[0, 17]], :type="mentions", :user_ids=["35632718"]}]
 
   send_message(msg)
   return "ok", 200
@@ -58,13 +55,7 @@ def send_message(msg):
           'user_ids':["27457002"],
           'loci':[[7, 6]]  
           }
-          #request.add_header('content-type', 'application/json')
           ]
-
-          
-          #'type':"mentions",
-          #'user_ids':[35632718],
-          #"loci":[[0,17]]
           
          }
   request = Request(url, urlencode(data).encode())
