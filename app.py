@@ -58,6 +58,9 @@ def send_message(msg):
           ]
           
          }
-  request = Request(url, urlencode(data).encode())
+  params = json.dumps(data).encode('utf8')
+  request = Request(url, data=params, headers={'content-type': 'application/json'})
+  response = urlopen(request).read().decode()
+  #request = Request(url, urlencode(data).encode())
   #request.add_header('content-type', 'application/json')
-  json = urlopen(request).read().decode()
+  #json = urlopen(request).read().decode()
