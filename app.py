@@ -58,6 +58,7 @@ def send_message(msg):
           'user_ids':["27457002"],
           'loci':[[7, 6]]  
           }
+          request.add_header('content-type', 'application/json')
           ]
 
           
