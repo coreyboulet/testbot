@@ -2,7 +2,7 @@ import os
 import sys
 import json
 import groupy
-from groupy import Bot, Group, attachments
+#from groupy import Bot, Group, attachments
 
 groupy.config.KEY_LOCATION = "MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG"
 
