@@ -21,7 +21,7 @@ def post():
 	bot = get_bot(gID)
 		# We don't want to reply to ourselves!
 	if data['name'] != bot.name:
-		msg = data['text'] #truc bizzare
+		msg = data['text'] #truc bizzare 
 		if '@all' in msg:
 			at_all(bot, group)
 	if 'TypeThis' in msg:
