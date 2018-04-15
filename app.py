@@ -66,4 +66,4 @@ def get_bot(groupID):
 
 def log(msg):
 	print(str(msg))
-		sys.stdout.flush()
+	sys.stdout.flush()
