@@ -38,7 +38,7 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']=='33797805' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'lol this is cool, really'
+    msg = 'lol'
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']=='33797805' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
@@ -46,9 +46,9 @@ def webhook():
     usrID= 35632718,53626037,33632383
     locid= [24,28],[0,0],[0,0]
   elif data['group_id']=='33797805' and mess=='@quest' and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch'
+    msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch'
     usrID= 35632718,53626037,33632383
-    locid= [24,28],[0,0],[0,0]
+    locid= [23,28],[0,0],[0,0]
 
 
 
