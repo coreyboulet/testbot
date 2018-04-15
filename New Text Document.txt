@@ -1,8 +1,10 @@
 https://coreybot.herokuapp.com/ | https://git.heroku.com/coreybot.git
+MLNAWV0kDn62viD3ClwUzmOyO7Ru87BGjKKYLlFG
 
 
+heroku config:set GROUPME_BOT_ID=6b841fe0af935820f1c985edd5   (test)
+heroku config:set GROUPME_BOT_ID=312874748ceaa564e433de21ad
 
-heroku config:set GROUPME_BOT_ID=[your bot id]
 heroku config # should display all current configuration variables
 
 
