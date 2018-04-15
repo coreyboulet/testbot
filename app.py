@@ -24,14 +24,16 @@ def webhook():
   #us about the raid happening. 
   if data['group_id']==	'36731470' and data['name'] != 'Secretary of Coreyboulet':
     msg = '{}, announced :"{}".... Who is in ?'.format(data['name'], data['text'])
+    usrID= 0
+    locid= [0, 0]
 
   # Ici je verifie que on est bien dans le code du channel de conversation
   #then I check the text and that I'm not talking to myself
-  elif data['group_id']=='33797805' and mess=='hello' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']=='39961905' and mess=='hello' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello {}!'.format(data['name'])
     usrID= 0
     locid= [0, 0]
-  elif data['group_id']=='33797805' and mess=='good night' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']=='39961905' and mess=='good night' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Sleep tight {}!'.format(data['name'])
     usrID= 0
     locid= [0, 0]
