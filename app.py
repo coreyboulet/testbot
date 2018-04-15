@@ -66,6 +66,6 @@ def send_message(msg):
           #"loci":[[0,17]]
           
          }
-  request.add_header('content-type', 'application/json')
   request = Request(url, urlencode(data).encode())
+  request.add_header('content-type', 'application/json')
   json = urlopen(request).read().decode()
