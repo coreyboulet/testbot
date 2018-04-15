@@ -49,7 +49,7 @@ def send_message(msg):
           
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
-          'attachments': atch
+          'attachments':
           [
           {
           'type':'mentions',
