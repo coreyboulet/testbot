@@ -24,15 +24,15 @@ def webhook():
   #us about the raid happening. 
   if data['group_id']==	'36731470' and data['name'] != 'Secretary of Coreyboulet':
     msg = '{}, announced :"{}".... Who is in ?'.format(data['name'], data['text'])
-    usrID= 0
-    locid= [0, 0]
+    usrID= 0,0
+    locid= [0, 0],[0, 0]
 
   # Ici je verifie que on est bien dans le code du channel de conversation
   #then I check the text and that I'm not talking to myself
   elif data['group_id']=='33797805' and mess=='hello' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello {}!'.format(data['name'])
-    usrID= 0
-    locid= [0, 0]
+    usrID= 0,0
+    locid= [0, 0],[0, 0]
   elif data['group_id']=='33797805' and mess=='good night' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Sleep tight {}!'.format(data['name'])
     usrID= 0,0
@@ -42,9 +42,14 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']=='33797805' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Matt'
-    usrID= 35632718,53626037,20366614
+    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch'
+    usrID= 35632718,53626037,33632383
     locid= [24,28],[0,0],[0,0]
+  elif data['group_id']=='33797805' and mess=='@quest' and data['name'] != 'Secretary of Coreyboulet':
+    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch'
+    usrID= 35632718,53626037,33632383
+    locid= [24,28],[0,0],[0,0]
+
 
 
   send_message(msg, usrID, locid)
