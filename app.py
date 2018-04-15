@@ -35,8 +35,6 @@ def webhook():
   	msg = 'lol'
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello, @Clare'
-    usrID="["27457002"]"
-    loci="[[7, 6]]"
 
 
   send_message(msg)
@@ -55,8 +53,8 @@ def send_message(msg):
           [
           {
           'type':'mentions',
-          'user_ids':usrID,
-          'loci': loci
+          'user_ids':["27457002"],
+          'loci':[[7, 6]]  
           }
           ]
           
