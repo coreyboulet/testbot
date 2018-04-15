@@ -67,5 +67,5 @@ def send_message(msg):
           
          }
   request = Request(url, urlencode(data).encode())
-  request.add_header('content-type', 'application/json')
+  #request.add_header('content-type', 'application/json')
   json = urlopen(request).read().decode()
