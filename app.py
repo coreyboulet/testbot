@@ -38,7 +38,7 @@ def webhook():
     usrID= 0
     locid= [0, 0]
   elif data['group_id']=='39961905' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'lol'
+    msg = 'lol this is cool'
     usrID= "53626037"
     locid= [0, 3]
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
