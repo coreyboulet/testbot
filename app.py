@@ -33,7 +33,7 @@ def webhook():
     msg = 'Sleep tight {}!'.format(data['name'])
   elif data['group_id']=='39961905' and mess=='lol' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'lol'
-    usrID= 53626037
+    usrID= 0
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello, @Coreyboulet'
     usrID= 53626037
