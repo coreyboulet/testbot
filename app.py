@@ -44,7 +44,7 @@ def webhook():
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Matt'
     usrID= 35632718,53626037,20366614
-    locid= [24,12],[38,8],[47,5]
+    locid= [24,27],[0,0],[0,0]
 
 
   send_message(msg, usrID, locid)
