@@ -53,7 +53,7 @@ def send_message(msg):
           [
           {
           'type':'mentions',
-          'user_ids':["53626037"],
+          'user_ids':[53626037],
           'loci':[[7, 12]]  
           }
           ]
