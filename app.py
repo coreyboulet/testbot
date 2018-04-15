@@ -43,8 +43,8 @@ def webhook():
     locid= [0, 0]
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello, @Coreyboulet'
-    usrID= 53626037
-    locid= [7, 12]
+    usrID= 53626037,53626037
+    locid= [7, 12],[7, 12]
 
 
   send_message(msg, usrID, locid)
