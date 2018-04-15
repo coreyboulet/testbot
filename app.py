@@ -37,15 +37,15 @@ def webhook():
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello, @Coreyboulet'
     usrID= 53626037
-    loci= "[7, 12]"
+    locid= "[7, 12]"
 
 
-  send_message(msg, usrID, loci)
+  send_message(msg, usrID, locid)
   return "ok", 200
 
 
 
-def send_message(msg, usrID, loci):
+def send_message(msg, usrID, locid):
   url  = 'https://api.groupme.com/v3/bots/post?token=' + os.getenv('ACCESS_TOKEN')
 
   data = {
@@ -57,7 +57,7 @@ def send_message(msg, usrID, loci):
           {
           'type':'mentions',
           'user_ids':[usrID],
-          'loci':[loci]  
+          'loci':[locid]  
           }
           ]
           
