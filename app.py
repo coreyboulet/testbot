@@ -55,7 +55,7 @@ def send_message(msg):
           [
           {
           'type':'mentions',
-          'user_ids':usrID
+          'user_ids':usrID,
           'loci': loci
           }
           ]
