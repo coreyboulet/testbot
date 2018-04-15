@@ -18,6 +18,7 @@ def webhook():
   #Here I'm putting the message coming from the channel in lower so I dont care about caps
   mess = data['text']
   mess= mess.lower()
+  usrID=0
   
   # We don't want to reply to ourselves!
   # In this line I check that this message come from the alert channel so it starts the message telling 
@@ -35,6 +36,7 @@ def webhook():
   	msg = 'lol'
   elif data['group_id']=='39961905' and data['text']=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello, @Coreyboulet'
+    usrID= 53626037
 
 
   send_message(msg)
@@ -53,7 +55,7 @@ def send_message(msg):
           [
           {
           'type':'mentions',
-          'user_ids':[53626037],
+          'user_ids':[usrID],
           'loci':[[7, 12]]  
           }
           ]
