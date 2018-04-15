@@ -50,13 +50,13 @@ def send_message(msg):
           'bot_id' : os.getenv('GROUPME_BOT_ID'),
           'text'   : msg,
           'attachments':
-          #[
+          [
           #{
           #'type':'mentions',
           #'user_ids':["27457002"],
           #'loci':[[7, 6]]  
           #}
-          #]
+          ]
           
          }
   params = json.dumps(data).encode('utf8')
