@@ -57,7 +57,7 @@ def webhook():
     msg = 'A ghost was mentionned. @Rob'
     usrID= 18834490,0
     locid= [22,4],[0,0]
-  elif data['group_id']=='33797805' and mess=='@Bot' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']=='33797805' and data['text']=='@Bot' and data['name'] != 'Secretary of Coreyboulet':
     msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinau @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
 
 
