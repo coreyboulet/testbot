@@ -42,9 +42,9 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']=='33797805' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch'
-    usrID= 35632718,53626037,33632383
-    locid= [24,28],[0,0],[0,0]
+    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch @Sabre @Sam'
+    usrID= 35632718,53626037,33632383,56662107,50236640
+    locid= [24,28],[0,0],[0,0],[0,0],[0,0]
   elif data['group_id']=='33797805' and mess=='@Quest' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch'
     usrID= 35632718,53626037,33632383
@@ -58,8 +58,9 @@ def webhook():
     usrID= 18834490,0
     locid= [22,4],[0,0]
   elif data['group_id']=='33797805' and data['text']=='@Bot' and data['name'] != 'Secretary of Coreyboulet':
-    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinau @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
-
+    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
+    usrID= 0,0
+    locid= [0, 0],[0, 0]
 
   send_message(msg, usrID, locid)
   return "ok", 200
