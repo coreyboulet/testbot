@@ -93,9 +93,3 @@ def send_message(msg, usrID, locid):
   #request.add_header('content-type', 'application/json')
   #json = urlopen(request).read().decode()
 
-
-msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
-usrID= 0,0
-locid= [0, 0],[0, 0]
-schedule.every().day.at("10:55").do(send_message(msg, usrID, locid))
-schedule.every().day.at("10:57").send_message(msg, usrID, locid)
