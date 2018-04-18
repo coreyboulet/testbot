@@ -8,6 +8,8 @@ from urllib.request import Request, urlopen
 #from groupy.client import Client
 #client = Client.from_token(token)
 from flask import Flask, request
+import schedule
+import time
 
 app = Flask(__name__)
 
@@ -90,3 +92,15 @@ def send_message(msg, usrID, locid):
   #request = Request(url, urlencode(data).encode())
   #request.add_header('content-type', 'application/json')
   #json = urlopen(request).read().decode()
+
+
+def daily_message():
+  msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
+  usrID= 0,0
+  locid= [0, 0],[0, 0]
+  schedule.every().day.at("10:00").do(send_message(msg, usrID, locid))
+  schedule.every().day.at("10:30").send_message(msg, usrID, locid)
+
+while True:
+    schedule.run_pending()
+    time.sleep(1)
