@@ -31,7 +31,7 @@ def webhook():
 
   # Ici je verifie que on est bien dans le code du channel de conversation
   #then I check the text and that I'm not talking to myself
-  elif data['group_id']=='33797805' and mess=='hello' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and mess=='hello' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello {}!'.format(data['name'])
     usrID= 0,0
     locid= [0, 0],[0, 0]
@@ -43,23 +43,23 @@ def webhook():
     msg = 'lol'
     usrID= 0,0
     locid= [0, 0],[0, 0]
-  elif data['group_id']=='33797805' and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch @Sabre @Sam'
     usrID= 35632718,53626037,33632383,56662107,50236640
     locid= [24,28],[0,0],[0,0],[0,0],[0,0]
-  elif data['group_id']=='33797805' and mess=='@Quest' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and mess=='@Quest' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch'
     usrID= 35632718,53626037,33632383
     locid= [23,28],[0,0],[0,0]
-  elif data['group_id']=='33797805' and data['text']=='@Ditto' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and data['text']=='@Ditto' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Ditto was mentionned. @Rob, @Jackie'
     usrID= 18834490,45568857,0
     locid= [22,13],[0,0],[0,0]
-  elif data['group_id']=='33797805' and data['text']=='@Ghost' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and data['text']=='@Ghost' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'A ghost was mentionned. @Rob'
     usrID= 18834490,0
     locid= [22,4],[0,0]
-  elif data['group_id']=='33797805' and data['text']=='@Bot' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and data['text']=='@Bot' and data['name'] != 'Secretary of Coreyboulet':
     msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
     usrID= 0,0
     locid= [0, 0],[0, 0]
