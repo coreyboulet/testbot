@@ -43,19 +43,19 @@ def webhook():
     msg = 'lol'
     usrID= 0,0
     locid= [0, 0],[0, 0]
-  elif data['group_id']==os.getenv('GROUP_ID') and data['text']=='@Rare' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and mess=='@rare' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch @Sabre @Sam'
     usrID= 35632718,53626037,33632383,56662107,50236640
     locid= [24,28],[0,0],[0,0],[0,0],[0,0]
-  elif data['group_id']==os.getenv('GROUP_ID') and mess=='@Quest' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and mess=='@quest' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch'
     usrID= 35632718,53626037,33632383
     locid= [23,28],[0,0],[0,0]
-  elif data['group_id']==os.getenv('GROUP_ID') and data['text']=='@Ditto' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and mess=='@ditto' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Ditto was mentionned. @Rob, @Jackie'
     usrID= 18834490,45568857,0
     locid= [22,13],[0,0],[0,0]
-  elif data['group_id']==os.getenv('GROUP_ID') and data['text']=='@Ghost' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and mess=='@ghost' and data['name'] != 'Secretary of Coreyboulet':
     msg = 'A ghost was mentionned. @Rob'
     usrID= 18834490,0
     locid= [22,4],[0,0]
