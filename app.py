@@ -108,6 +108,6 @@ schedule.every(10).seconds.do(daily_message)
 #schedule.every().day.at("20:04").send_message(daily_message)
 
 
-#while True:
-  #schedule.run_pending()
-  #time.sleep(1)
+while True:
+  schedule.run_pending()
+  time.sleep(1)
