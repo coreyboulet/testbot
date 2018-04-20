@@ -107,6 +107,6 @@ def send_message(msg, usrID, locid):
 #schedule.every().day.at("20:04").send_message(daily_message)
 
 
-while True:
+#while True:
   #schedule.run_pending()
   #time.sleep(1)
