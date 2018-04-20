@@ -103,7 +103,7 @@ def daily_message():
   send_message(msg, usrID, locid)
 
 
-schedule.every().day.at("20:08").do(daily_message)
+schedule.every().day.at("20:18").do(daily_message)
 #schedule.every().day.at("20:04").send_message(daily_message)
 
 
