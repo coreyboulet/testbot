@@ -24,14 +24,14 @@ def webhook():
   # We don't want to reply to ourselves!
   # In this line I check that this message come from the alert channel so it starts the message telling 
   #us about the raid happening. 
-  if data['group_id']==	'36731470' and data['name'] != 'Secretary of Coreyboulet':
+  if data['group_id']==	'36731470' and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess:
     msg = '{}, announced :"{}".... Who is in ?'.format(data['name'], data['text'])
     usrID= 0,0
     locid= [0, 0],[0, 0]
 
   # Ici je verifie que on est bien dans le code du channel de conversation
   #then I check the text and that I'm not talking to myself
-  elif data['group_id']==os.getenv('GROUP_ID') and mess=='hello' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and 'hello' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Hello {}!'.format(data['name'])
     usrID= 0,0
     locid= [0, 0],[0, 0]
@@ -96,17 +96,17 @@ def send_message(msg, usrID, locid):
 
 
 
-def daily_message():
-  msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
-  usrID= 0,0
-  locid= [0, 0],[0, 0]
-  send_message(msg, usrID, locid)
+#def daily_message():
+  #msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
+  #usrID= 0,0
+  #locid= [0, 0],[0, 0]
+  #send_message(msg, usrID, locid)
 
 
-schedule.every().day.at("07:21").do(lambda: send_message(daily_message))
+#schedule.every().day.at("07:21").do(lambda: send_message(daily_message))
 #schedule.every().day.at("20:04").send_message(daily_message)
 
 
-while True:
-  schedule.run_pending()
-  time.sleep(1)
+#while True:
+  #schedule.run_pending()
+  #time.sleep(1)
