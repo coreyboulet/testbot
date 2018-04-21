@@ -3,13 +3,13 @@ import json
 
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
-#from groupy import attachments
-#from groupy import post
-#from groupy.client import Client
-#client = Client.from_token(token)
 from flask import Flask, request
 import schedule
 import time
+
+#import test for the googlespreadsheet
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 app = Flask(__name__)
 
@@ -89,10 +89,6 @@ def send_message(msg, usrID, locid):
   params = json.dumps(data).encode('utf8')
   request = Request(url, data=params, headers={'content-type': 'application/json'})
   response = urlopen(request).read().decode()
-  #request = Request(url, urlencode(data).encode())
-  #request.add_header('content-type', 'application/json')
-  #json = urlopen(request).read().decode()
-
 
 
 
