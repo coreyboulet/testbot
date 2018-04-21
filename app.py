@@ -51,7 +51,7 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and 'lol' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = testresult
+    msg = string(testresult)
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@rare' in mess and data['name'] != 'Secretary of Coreyboulet':
