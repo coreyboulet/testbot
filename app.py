@@ -16,7 +16,7 @@ creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', sc
 client = gspread.authorize(creds)
 
 sheet=client.open('GroupMeBot')
-
+testresult= sheet.cell(2,3).value
 
 
 
@@ -51,7 +51,7 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and 'lol' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'lol'
+    msg = testresult
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@rare' in mess and data['name'] != 'Secretary of Coreyboulet':
