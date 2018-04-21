@@ -8,8 +8,8 @@ import schedule
 import time
 
 #import test for the googlespreadsheet
-#import gspread
-#from oauth2client.service_account import ServiceAccountCredentials
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 app = Flask(__name__)
 
