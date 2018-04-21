@@ -8,15 +8,15 @@ import schedule
 import time
 
 #import test for the googlespreadsheet
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+#import gspread
+#from oauth2client.service_account import ServiceAccountCredentials
 
-scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
-client = gspread.authorize(creds)
+#scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+#creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
+#client = gspread.authorize(creds)
 
-sheet=client.open('GroupMeBot')
-testresult= sheet.cell(2,3).value
+#sheet=client.open('GroupMeBot')
+#testresult= sheet.cell(2,3).value
 
 
 
@@ -51,7 +51,7 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and 'lol' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = testresult
+    msg = 'lol'
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@rare' in mess and data['name'] != 'Secretary of Coreyboulet':
