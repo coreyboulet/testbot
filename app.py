@@ -13,7 +13,7 @@ from oauth2client.client import OAuth2WebServerFlow
 
 
 scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-creds = OAuth2WebServerFlow(GCLIENT_ID,GCLIENT_SECRET,scope)
+creds = OAuth2WebServerFlow(os.getenv('GCLIENT_ID',os.getenv('GCLIENT_SECRET'),scope)
 
 #creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
