@@ -9,7 +9,7 @@ import time
 
 #import test for the googlespreadsheet
 import gspread
-from oauth2client.service_account import OAuth2WebServerFlow
+from oauth2client.client import OAuth2WebServerFlow
 
 
 scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
