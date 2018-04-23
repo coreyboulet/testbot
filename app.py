@@ -17,7 +17,7 @@ creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', sc
 client = gspread.authorize(creds)
 
 sheet=client.open('GroupMeBot').sheet1
-testresult= 
+#testresult= 
 
 
 
