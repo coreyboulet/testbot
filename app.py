@@ -11,14 +11,12 @@ import time
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-
+#https://www.youtube.com/watch?v=vISRn5qFrkM&t=137s   and check the commentaries for the extra scope. 
+#This basically opent the sheet in the excel sheet
 scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
-
 sheet=client.open('GroupMeBot').sheet1
-#testresult= 
-
 
 
 
@@ -64,7 +62,7 @@ def webhook():
     locid= [23,28],[0,0],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(2,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = sheet.cell(2,2).value
-    usrID= sheet.cell(2,3).value,0
+    usrID= sheet.cell(2,3).value+,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@ditto' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Ditto was mentionned. @Rob, @Jackie'
