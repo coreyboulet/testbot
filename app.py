@@ -8,15 +8,13 @@ import schedule
 import time
 
 #import test for the googlespreadsheet
-#import gspread
-#from oauth2client.client import OAuth2WebServerFlow
+import gspread
+from oauth2client.client import ServiceAccountCredentials
 
 
-#scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
-#creds = OAuth2WebServerFlow(os.getenv('GCLIENT_ID',os.getenv('GCLIENT_SECRET'),scope,redirect_uri='https://www.googleapis.com/robot/v1/metadata/x509/groupmebot%40groupmebot-201820.iam.gserviceaccount.com')
-
-#creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
-#client = gspread.authorize(creds)
+scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
+client = gspread.authorize(creds)
 
 #sheet=client.open('GroupMeBot')
 #testresult= sheet.cell(2,3).value
