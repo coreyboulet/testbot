@@ -62,6 +62,10 @@ def webhook():
     msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch'
     usrID= 35632718,53626037,33632383
     locid= [23,28],[0,0],[0,0]
+  elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(2,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
+    msg = sheet.cell(2,3).value
+    usrID= 0,0
+    locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@ditto' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Ditto was mentionned. @Rob, @Jackie'
     usrID= 18834490,45568857,0
