@@ -18,7 +18,6 @@ client = gspread.authorize(creds)
 
 sheet=client.open('GroupMeBot').sheet1
 testresult= sheet.cell(2,3).value
-client.close('GroupMeBot').sheet1
 
 
 
