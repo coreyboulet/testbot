@@ -64,7 +64,7 @@ def webhook():
     msg = sheet.cell(2,2).value
     usrID= sheet.cell(2,3).value,0
     locid= [sheet.cell(2,4).value,sheet.cell(2,5).value],[0, 0]
-  elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(2,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(3,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = sheet.cell(3,2).value
     usrID= sheet.cell(3,3).value,0
     locid= [sheet.cell(3,4).value,sheet.cell(3,5).value],[3, 0]
