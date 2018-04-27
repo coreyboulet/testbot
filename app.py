@@ -53,9 +53,9 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@rare' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch @Sabre @Sam @Harold @Allan, @Celine, Sam M'
+    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch @Sabre @Sam @Allan, @Celine, @Sam M, @Max'
     usrID= 35632718,53626037,33632383,56662107,50236640,58375075 ,33612373,47762292,17045652
-    locid= [24,72],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
+    locid= [24,71],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@quest' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch'
     usrID= 35632718,53626037,33632383
@@ -69,15 +69,15 @@ def webhook():
     usrID= sheet.cell(3,3).value,0
     locid= [sheet.cell(3,4).value,sheet.cell(3,5).value],[3, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@ditto' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Ditto was mentionned. @Rob, @Jackie'
-    usrID= 18834490,45568857,0
-    locid= [22,13],[0,0],[0,0]
+    msg = 'Ditto was mentionned. @Rob'
+    usrID= 18834490,0
+    locid= [22,4],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@ghost'in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'A ghost was mentionned. @Rob @Clare'
     usrID= 18834490,27457002
     locid= [23,11],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@bot' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob and Jackie, @Ghost: Rob, Clare @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B, Harold, Allan, Celine, Sam M @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
+    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob, @Ghost: Rob, Clare @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B, Allan, Celine, Sam M,Max @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
     usrID= 0,0
     locid= [0, 0],[0, 0]
 
