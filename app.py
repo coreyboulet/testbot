@@ -77,7 +77,7 @@ def webhook():
     usrID= 18834490,27457002
     locid= [23,11],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@bot' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob, @Ghost: Rob, Clare @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B, Allan, Celine, Sam M,Max @Quest: Mitch, Corey, Abhinay. Contact Corey to be added or deleted from a list " 
+    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob, @Ghost: Rob, Clare @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B, Allan, Celine, Sam M,Max @Quest: Mitch, Corey, Abhinay, Andee, Max. Contact Corey to be added or deleted from a list " 
     usrID= 0,0
     locid= [0, 0],[0, 0]
 
