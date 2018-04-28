@@ -44,9 +44,9 @@ def webhook():
   	  			ref = sheet.find(string)
   	  			row = ref.row
   	  			output = sheet.cell(row,2).value
-  			text= text + " " + output
+  	  		text= text + " " + output
   		#this is to avoid the formula to crash when the word is not in the excel list
-  		except:
+  	  	except:
     		pass
     #Here I'm looking for something that looks like a time xx:xx or x:xx
     searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
