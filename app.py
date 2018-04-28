@@ -38,6 +38,7 @@ def webhook():
   if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess :
   	strings=mess.split()
   	text=""
+  	time=""
   	for string in strings:
   		try:
   			if sheet.find(string):
