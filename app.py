@@ -49,9 +49,12 @@ def webhook():
   		except:
   			pass
   	#Here I'm looking for something that looks like a time xx:xx or x:xx
-  	searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
-  	#I'm takin the first (and probably only time in the list created)
-  	time=searchtime[0]
+  	try:
+  		searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
+  		#I'm takin the first (and probably only time in the list created)
+  		time=searchtime[0]
+  	except:
+  		pass
   	msg= " {} announced ".format(data['name']) + text +" at " + time +" who's in ?"
   	usrID= 0,0
   	locid= [0, 0],[0, 0]
