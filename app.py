@@ -88,9 +88,9 @@ def webhook():
     usrID= 35632718,53626037,33632383,56662107,50236640,58375075 ,33612373,47762292,17045652
     locid= [24,71],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@quest' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch @Andee @Max @Allan'
+    msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch @Andee @Max @Allan @Celine'
     usrID= 35632718,53626037,33632383,41943092,58375075,33612373
-    locid= [23,47],[0,0],[0,0],[0,0],[0,0],[0,0]
+    locid= [23,55],[0,0],[0,0],[0,0],[0,0],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(2,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = sheet.cell(2,2).value
     usrID= sheet.cell(2,3).value,0
@@ -108,7 +108,7 @@ def webhook():
     usrID= 18834490,27457002
     locid= [23,11],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@bot' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob, @Ghost: Rob, Clare @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B, Allan, Celine, Sam M,Max @Quest: Mitch, Corey, Abhinay, Andee, Max, Allan. Contact Corey to be added or deleted from a list " 
+    msg = "Hello Everyone, I'm a bot, please use me to notify people that need things on this channel. Right now, you can type @Ditto: Rob, @Ghost: Rob, Clare @Rare: Mitch, Corey, Abhinay, Sabre, Sam-B, Allan, Celine, Sam M,Max @Quest: Mitch, Corey, Abhinay, Andee, Max, Allan, Celine. Contact Corey to be added or deleted from a list " 
     usrID= 0,0
     locid= [0, 0],[0, 0]
 
