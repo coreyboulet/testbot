@@ -47,7 +47,7 @@ def webhook():
   	  		text= text + " " + output
   		#this is to avoid the formula to crash when the word is not in the excel list
   	  	except:
-      		pass
+  	  		pass
     #Here I'm looking for something that looks like a time xx:xx or x:xx
     searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
     #I'm takin the first (and probably only time in the list created)
