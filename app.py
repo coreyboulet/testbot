@@ -36,25 +36,25 @@ def webhook():
   #here i split the messages in string so we checked if they are names for raids in the dedicated sheet.
 
   if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess :
-  	  strings=mess.split()
-  	  text=""
-  	  for string in strings:
-  	  	try:
-  	  		if sheet.find(string):
-  	  			ref = sheet.find(string)
-  	  			row = ref.row
-  	  			output = sheet.cell(row,2).value
-  	  		text= text + " " + output
-  		#this is to avoid the formula to crash when the word is not in the excel list
-  	  	except:
-  	  		pass
-    #Here I'm looking for something that looks like a time xx:xx or x:xx
-    searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
-    #I'm takin the first (and probably only time in the list created)
-    time=searchtime[0]
-    msg= " {} announced ".format(data['name']) + text +" at " + time +" who's in ?"
-    usrID= 0,0
-    locid= [0, 0],[0, 0]
+  	strings=mess.split()
+  	text=""
+  	for string in strings:
+  		try:
+  			if sheet.find(string):
+  				ref = sheet.find(string)
+  				row = ref.row
+  				output = sheet.cell(row,2).value
+  			text= text + " " + output
+  			#this is to avoid the formula to crash when the word is not in the excel list
+  		except:
+  			pass
+  	#Here I'm looking for something that looks like a time xx:xx or x:xx
+  	searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
+  	#I'm takin the first (and probably only time in the list created)
+  	time=searchtime[0]
+  	msg= " {} announced ".format(data['name']) + text +" at " + time +" who's in ?"
+  	usrID= 0,0
+  	locid= [0, 0],[0, 0]
 
 
 
