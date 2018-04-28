@@ -6,6 +6,7 @@ from urllib.request import Request, urlopen
 from flask import Flask, request
 import schedule
 import time
+import re
 
 #import test for the googlespreadsheet
 import gspread
@@ -16,8 +17,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
-sheet=client.open('GroupMeBot').sheet1
-
+sheet=client.open('GroupMeBot').worksheet("discordbot")
 
 
 app = Flask(__name__)
@@ -33,10 +33,33 @@ def webhook():
   # We don't want to reply to ourselves!
   # In this line I check that this message come from the alert channel so it starts the message telling 
   #us about the raid happening. 
+  #here i split the messages in string so we checked if they are names for raids in the dedicated sheet.
+
   if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess :
-    msg = '{}, announced :"{}".... Who is in ?'.format(data['name'], data['text'])
+  	  strings=mess.split()
+  	  text=""
+  	  for string in strings:
+  	  	try:
+  	  		if sheet.find(string):
+  	  			ref = sheet.find(string)
+  	  			row = ref.row
+  	  			output = sheet.cell(row,2).value
+  			text= text + " " + output
+  		#this is to avoid the formula to crash when the word is not in the excel list
+  		except:
+    		pass
+    #Here I'm looking for something that looks like a time xx:xx or x:xx
+    searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
+    #I'm takin the first (and probably only time in the list created)
+    time=searchtime[0]
+    msg= " {} announced ".format(data['name']) + text +" at " + time +" who's in ?"
     usrID= 0,0
     locid= [0, 0],[0, 0]
+
+
+
+
+
 
   # Ici je verifie que on est bien dans le code du channel de conversation
   #then I check the text and that I'm not talking to myself
