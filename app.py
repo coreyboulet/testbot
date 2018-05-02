@@ -40,6 +40,7 @@ def webhook():
   	strings=mess.split()
   	text=""
   	time=""
+  	pokemon=""
   	for string in strings:
   		try:
   			if sheet.find(string):
@@ -50,6 +51,16 @@ def webhook():
   			#this is to avoid the formula to crash when the word is not in the excel list
   		except:
   			pass
+  	for string in strings:
+  		try:
+  			if pokemonsheet.find(string):
+  				ref = pokemonsheet.find(string)
+  				row = ref.row
+  				output = pokemonsheet.cell(row,2).value
+  			pokemon= pokemon + " " + output
+  			#this is to avoid the formula to crash when the word is not in the excel list
+  		except:
+  			pass
   	#Here I'm looking for something that looks like a time xx:xx or x:xx
   	try:
   		searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
@@ -57,7 +68,7 @@ def webhook():
   		time=searchtime[0]
   	except:
   		pass
-  	msg= " {} announced ".format(data['name']) + text +" at " + time +" who's in ?"
+  	msg= " {} announced ".format(data['name']) + pokemon + " at " + text + " at " + time +" who's in ?"
   	usrID= 0,0
   	locid= [0, 0],[0, 0]
 
