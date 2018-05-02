@@ -16,7 +16,7 @@ from oauth2client.service_account import ServiceAccountCredentials
 scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
 creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
-sheet=client.open('GroupMeBot').worksheet("discordbot")
+gymsheet=client.open('GroupMeBot').worksheet("discordbot")
 pokemonsheet=client.open('GroupMeBot').worksheet("pokemon")
 
 
@@ -37,20 +37,20 @@ def webhook():
 
   if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess :
   	strings=mess.split()
-  	text=""
+  	gym=""
   	time=""
   	pokemon=""
   	  #here i split the messages in string so we checked if they are names for raids in the dedicated sheet. this is the first part, looking for info on the raid
   	for string in strings:
   		try:
-  			if sheet.find(string):
-  				ref = sheet.find(string)
+  			if gymsheet.find(string):
+  				ref = gymsheet.find(string)
   				row = ref.row
-  				output = sheet.cell(row,2).value
-  			text= text + " " + output
+  				output = gymsheet.cell(row,2).value
+  			gym= gym + " " + output
   			#this is to avoid the formula to crash when the word is not in the excel list
   		except:
-  			pass
+  			gym="(not sure where :("
   	#This is the second part to identify the pokemon
   	for string in strings:
   		try:
@@ -74,7 +74,7 @@ def webhook():
   		  	time=" with " +searchtime[0] +" mins left "		
   		except:
   			time=" (sorry I don't know when it is) "
-  	msg= " {} announced a ".format(data['name']) + pokemon + " at " + text  + time +", who's in ?"
+  	msg= " {} announced a ".format(data['name']) + pokemon + " at " + gym  + time +", who's in ?"
   	usrID= 0,0
   	locid= [0, 0],[0, 0]
 
