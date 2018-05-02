@@ -18,6 +18,7 @@ scope=['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/
 creds= ServiceAccountCredentials.from_json_keyfile_name('client_secret.json', scope)
 client = gspread.authorize(creds)
 sheet=client.open('GroupMeBot').worksheet("discordbot")
+pokemonsheet=client.open('GroupMeBot').worksheet("pokemon")
 
 
 app = Flask(__name__)
@@ -71,7 +72,7 @@ def webhook():
     msg = 'Hello {}!'.format(data['name'])
     usrID= 0,0
     locid= [0, 0],[0, 0]
-  elif data['group_id']==os.getenv('GROUP_ID') and mess=='good night' and data['name'] != 'Secretary of Coreyboulet':
+  elif data['group_id']==os.getenv('GROUP_ID') and 'good night' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Sleep tight {}!'.format(data['name'])
     usrID= 0,0
     locid= [0, 0],[0, 0]
