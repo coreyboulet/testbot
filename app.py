@@ -66,7 +66,7 @@ def webhook():
   		searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
 	  		#I'm takin the first (and probably only time in the list created)
 	  	time=searchtime[0]
-  	except:
+  	try:
 	  	searchtime=re.findall(r'\d{1,1}\S\d{1,1}', mess)
 	  	time=searchtime[0] 		
   	except:
