@@ -1,6 +1,5 @@
 import os
 import json
-
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 from flask import Flask, request
@@ -34,13 +33,14 @@ def webhook():
   # We don't want to reply to ourselves!
   # In this line I check that this message come from the alert channel so it starts the message telling 
   #us about the raid happening. 
-  #here i split the messages in string so we checked if they are names for raids in the dedicated sheet.
+
 
   if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess :
   	strings=mess.split()
   	text=""
   	time=""
   	pokemon=""
+  	  #here i split the messages in string so we checked if they are names for raids in the dedicated sheet. this is the first part, looking for info on the raid
   	for string in strings:
   		try:
   			if sheet.find(string):
@@ -51,6 +51,7 @@ def webhook():
   			#this is to avoid the formula to crash when the word is not in the excel list
   		except:
   			pass
+  	#This is the second part to identify the pokemon
   	for string in strings:
   		try:
   			if pokemonsheet.find(string):
@@ -64,15 +65,16 @@ def webhook():
   	#Here I'm looking for something that looks like a time xx:xx or x:xx
   	try:
   		searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess)
-  		#I'm takin the first (and probably only time in the list created)
-  		time= "at "+ searchtime[0]
+  		#I'm takin the first string with the time criteria, since there should be only one time in the message most of the time
+  		time= " starting at "+ searchtime[0]
   	except:
   		try:
-  		  	searchtime=re.findall(r'\d{1,1}\S\d{1,1}', mess)
-  		  	time="in " +searchtime[0] 		
+  			#if I dont find an hour, and there are 2 numbers this is probably a timer so we adress it another way
+  		  	searchtime=re.findall(r'\d{1,2}\S', mess)
+  		  	time=" with" +searchtime[0] +" left "		
   		except:
   			pass
-  	msg= " {} announced a ".format(data['name']) + pokemon + " at " + text + " starting " + time +" who's in ?"
+  	msg= " {} announced a ".format(data['name']) + pokemon + " at " + text  + time +", who's in ?"
   	usrID= 0,0
   	locid= [0, 0],[0, 0]
 
