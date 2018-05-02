@@ -72,12 +72,13 @@ def webhook():
   			#if I dont find an hour, and there are 2 numbers this is probably a timer so we adress it another way
   		  	searchtime=re.findall(r'\d{1,2}\S', mess)
   		  	time=" with " +searchtime[0] +" mins left "		
+  	#From here we decide what to say when we dont understand the user 
   		except:
-  			time=" Sometime... "
+  			time=" sometime... "
   	if gym=="":
-  		gym=" Somewhere... "
+  		gym=" somewhere... "
   	if pokemon=="":
-  		pokemon=" Something... "  	
+  		pokemon=" something... "  	
   	msg= " {} announced a ".format(data['name']) + pokemon + " at " + gym  + time +", who's in ?"
   	usrID= 0,0
   	locid= [0, 0],[0, 0]
@@ -105,14 +106,14 @@ def webhook():
     msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch @Andee @Max @Allan @Celine'
     usrID= 35632718,53626037,33632383,41943092,58375075,33612373
     locid= [23,55],[0,0],[0,0],[0,0],[0,0],[0,0]
-#  elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(2,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
-#    msg = sheet.cell(2,2).value
-#    usrID= sheet.cell(2,3).value,0
-#    locid= [sheet.cell(2,4).value,sheet.cell(2,5).value],[0, 0]
-#  elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(3,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
-#    msg = sheet.cell(3,2).value
-#    usrID= sheet.cell(3,3).value,0
-#    locid= [sheet.cell(3,4).value,sheet.cell(3,5).value],[3, 0]
+	#  elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(2,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
+	#    msg = sheet.cell(2,2).value
+	#    usrID= sheet.cell(2,3).value,0
+	#    locid= [sheet.cell(2,4).value,sheet.cell(2,5).value],[0, 0]
+	#  elif data['group_id']==os.getenv('GROUP_ID') and sheet.cell(3,1).value in mess and data['name'] != 'Secretary of Coreyboulet':
+	#    msg = sheet.cell(3,2).value
+	#    usrID= sheet.cell(3,3).value,0
+	#    locid= [sheet.cell(3,4).value,sheet.cell(3,5).value],[3, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@ditto' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Ditto was mentionned. @Rob @Clare @Izzy'
     usrID= 18834490,27457002,27100281
