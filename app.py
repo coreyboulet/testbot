@@ -70,7 +70,7 @@ def webhook():
   	except:
   		try:
   			#if I dont find an hour, and there are 2 numbers this is probably a timer so we adress it another way
-  		  	searchtime=re.findall(r'\d{1,2}\S', mess)
+  		  	searchtime=re.findall(r'\d{1,2}', mess)
   		  	time=" with " +searchtime[0] +" mins left "		
   	#From here we decide what to say when we dont understand the user 
   		except:
