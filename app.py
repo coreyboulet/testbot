@@ -71,9 +71,9 @@ def webhook():
   		try:
   			#if I dont find an hour, and there are 2 numbers this is probably a timer so we adress it another way
   		  	searchtime=re.findall(r'\d{1,2}\S', mess)
-  		  	time=" with" +searchtime[0] +" left "		
+  		  	time=" with " +searchtime[0] +" mins left "		
   		except:
-  			pass
+  			time=" (sorry I don't know when it is) "
   	msg= " {} announced a ".format(data['name']) + pokemon + " at " + text  + time +", who's in ?"
   	usrID= 0,0
   	locid= [0, 0],[0, 0]
