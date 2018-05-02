@@ -73,7 +73,7 @@ def webhook():
   		  	searchtime=re.findall(r'\d{1,2}\S', mess)
   		  	time=" with " +searchtime[0] +" mins left "		
   		except:
-  			time=" (sorry I don't know when it is) "
+  			time=" Sometime... "
   	if gym=="":
   		gym=" Somewhere... "
   	if pokemon=="":
