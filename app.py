@@ -50,7 +50,7 @@ def webhook():
   			gym= gym + " " + output
   			#this is to avoid the formula to crash when the word is not in the excel list
   		except:
-  			gym="(not sure where :("
+  			pass
   	#This is the second part to identify the pokemon
   	for string in strings:
   		try:
@@ -74,6 +74,10 @@ def webhook():
   		  	time=" with " +searchtime[0] +" mins left "		
   		except:
   			time=" (sorry I don't know when it is) "
+  	if gym=="":
+  		gym=" Somewhere... "
+  	if pokemon=="":
+  		pokemon=" Something... "  	
   	msg= " {} announced a ".format(data['name']) + pokemon + " at " + gym  + time +", who's in ?"
   	usrID= 0,0
   	locid= [0, 0],[0, 0]
