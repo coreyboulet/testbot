@@ -63,11 +63,12 @@ def webhook():
   			pass
   	#Here I'm looking for something that looks like a time xx:xx or x:xx
   	try:
-  		if searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess):
+  		searchtime=re.findall(r'\d{1,2}\S\d{1,2}', mess):
 	  		#I'm takin the first (and probably only time in the list created)
-	  		time=searchtime[0]
-	  	else searchtime=re.findall(r'\d{1,1}\S\d{1,1}', mess):
-	  		time=searchtime[0]
+	  	time=searchtime[0]
+  	except:
+	  	searchtime=re.findall(r'\d{1,1}\S\d{1,1}', mess):
+	  	time=searchtime[0] 		
   	except:
   		pass
   	msg= " {} announced a ".format(data['name']) + pokemon + " at " + text + " at " + time +" who's in ?"
