@@ -35,7 +35,7 @@ def webhook():
   #us about the raid happening. 
 
 
-  if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess :
+  if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess and 'has joined'not in mess:
   	strings=mess.split()
   	gym=""
   	time=""
