@@ -35,7 +35,7 @@ def webhook():
   #us about the raid happening. 
 
 
-  if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'to the group.' not in mess and 'changed name'not in mess and 'has joined'not in mess:
+  if data['group_id']==os.getenv('GROUP_ALERT') and data['name'] != 'Secretary of Coreyboulet'and 'the group.' not in mess and 'changed name'not in mess and 'has joined'not in mess:
   	strings=mess.split()
   	gym=""
   	time=""
@@ -116,6 +116,10 @@ def webhook():
 	#    locid= [sheet.cell(3,4).value,sheet.cell(3,5).value],[3, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@ditto' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Ditto was mentionned. It seems no one needs it though :( sorry'
+    usrID= 0,0
+    locid= [0,0],[0,0]
+  elif data['group_id']==os.getenv('GROUP_ID') and 'has joined the group' in mess and data['name'] != 'Secretary of Coreyboulet':
+    msg = 'Welcome to the Cook/Douglas Raid Squad, feel free to discuss raid or anything here, and post raid on the "Alert Raid Cook/Douglas channel. Have fun !'
     usrID= 0,0
     locid= [0,0],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@ghost'in mess and data['name'] != 'Secretary of Coreyboulet':
