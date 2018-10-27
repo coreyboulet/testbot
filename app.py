@@ -99,9 +99,9 @@ def webhook():
     usrID= 0,0
     locid= [0, 0],[0, 0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@rare' in mess and data['name'] != 'Secretary of Coreyboulet':
-    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch @Sabre @Sam @Allan, @Celine, @Sam M, @Max'
-    usrID= 35632718,53626037,33632383,56662107,50236640,58375075 ,33612373,47762292,17045652
-    locid= [24,71],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
+    msg = 'Rare pokemon mentionned. @Coreyboulet @Abhinay @Mitch @Sabre @Sam @Allan, @Celine, @Sam M, @Max, @hotchoccy'
+    usrID= 35632718,53626037,33632383,56662107,50236640,58375075 ,33612373,47762292,17045652,43353934
+    locid= [24,83],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]
   elif data['group_id']==os.getenv('GROUP_ID') and '@quest' in mess and data['name'] != 'Secretary of Coreyboulet':
     msg = 'Quests were mentionned. @Coreyboulet @Abhinay @Mitch @Andee @Max @Allan @Celine'
     usrID= 35632718,53626037,33632383,41943092,58375075,33612373
